@@ -1,8 +1,13 @@
 <template>
-  <div class="api-test">
-    <h1>API Test Page</h1>
-    <input v-model="category" placeholder="Enter category" />
-    <button @click="fetchData">Fetch Data</button>
+  <div class="api-test" :style="backgroundStyle">
+    <h1 style="color: azure;">API Test Page</h1>
+    
+    <!-- Wrap the input and button within a form tag -->
+    <form @submit.prevent="fetchData">
+      <input v-model="category" placeholder="Enter category" />
+      <button type="submit">Fetch Data</button> <!-- set type="submit" to the button -->
+    </form>
+
     <div id="map-container">
       <div id="map" style="width: 100%; height: 400px;"></div>
       <div v-if="googleMapsLoaded" id="grid-overlay"></div> <!-- Overlay for the grid -->
@@ -13,6 +18,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
+
+// const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 const apiData = ref(null);
 const category = ref('');
@@ -220,7 +227,8 @@ function addGridOverlay() {
 }
 </script>
 
-<style scoped>
+<style>
+
 .api-test {
   text-align: center;
   margin-top: 50px;
@@ -228,9 +236,10 @@ function addGridOverlay() {
 
 /* Style for the map container */
 #map-container {
-  width: 100%;
-  height: 400px;
-  position: relative;
+  width: 600px;
+  height: 00px;
+  margin: 20px auto 0; /* This gives a 20px margin at the top and centers the div horizontally */
+  position: relative; /* Keeps it relative so it doesn't overlap other elements */
 }
 
 /* Style for the map */
@@ -256,4 +265,15 @@ function addGridOverlay() {
   z-index: 1; /* Set a higher z-index for the grid overlay */
   opacity: 1; 
 }
+
+html, body {
+  height: 100%;      
+  margin: 0;        
+  padding: 0;       
+  background-image: url('./Extra_Page_5background.png');  
+  background-size: cover;    
+  background-repeat: no-repeat;  
+  background-attachment: fixed;  
+}
+
 </style>
