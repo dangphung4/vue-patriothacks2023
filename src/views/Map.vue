@@ -147,6 +147,11 @@ const closeInfo = () => {
 </script>
   
 <style scoped>
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=VT323&display=swap');
+
+*{
+  font-family: "VT323";
+}
 .fade-enter-active, .fade-leave-active {
     transition: opacity 0.5s;
 }
@@ -239,13 +244,13 @@ body, h2, h3, h4, p {
 
 .info h2 {
     margin: 0;
-    font-size: 16px;
+    font-size: 27px;
     color: #ffffff;
 }
 
 .info p {
     margin: 4px 0;
-    font-size: 15px;
+    font-size: 20px;
     color: #fff;
 }
 button, .website-link {

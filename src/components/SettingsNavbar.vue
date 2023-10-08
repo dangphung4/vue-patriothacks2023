@@ -8,9 +8,9 @@
         style="width: 15%;"
       />
       <div v-if="isNavbarVisible" class="navbar">
-        <router-link to="/">Home</router-link>
-        <router-link to="/location">Enter Location</router-link>
-        <router-link to="/map">Map</router-link>
+        <router-link to="/" class="text">Home</router-link>
+        <router-link to="/location" class="text">Location</router-link>
+        <router-link to="/map" class="text">Map</router-link>
         <!-- More links as needed -->
       </div>
     </div>
@@ -27,6 +27,11 @@
   </script>
   
   <style scoped>
+   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=VT323&display=swap');
+
+*{
+  font-family: "VT323";
+}
   .settings-icon {
     position: absolute;
     top: 0;
@@ -34,7 +39,10 @@
     z-index: 3;
     cursor: pointer;
   }
-  
+  .text {
+    font-size: 25px;
+
+  }
   .navbar {
     position: absolute;
     top: 0;
