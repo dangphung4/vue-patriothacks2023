@@ -76,9 +76,9 @@
 }
 .sprite {
   position: absolute;
-  width: 100px; /* Adjust as needed */
+  width: 100px; 
   z-index: 2;
-  bottom: 20%; /* Adjust as needed */
+  bottom: 20%; 
   left: 50%;
   transform: translateX(-50%);
 }
@@ -112,13 +112,13 @@
 }
 .location-input {
   padding: 10px;
-  font-size: 18px; /* Adjust as needed */
-  margin-bottom: 20px; /* Adjust as needed */
+  font-size: 18px;
+  margin-bottom: 20px; 
 }
 
 .go-button {
   padding: 10px 20px;
-  background-color: #000; /* Adjust as needed */
+  background-color: #000; 
   color: #fff;
   border: none;
   cursor: pointer;
