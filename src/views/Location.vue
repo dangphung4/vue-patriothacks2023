@@ -34,7 +34,12 @@
   </script>
   
   <style scoped>
-.location-page {
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=VT323&display=swap');
+
+*{
+  font-family: "VT323";
+}
+  .location-page {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -45,13 +50,13 @@
     top: 90%;  
     left: 10%; 
     width: 50%; 
-    height: 5%; 
+    height: 10%; 
     border: 1px solid black; 
     background-color: white; 
     color: black; 
     padding: 10px;
-    font-family: 'Press Start 2P', cursive; 
-    font-size: 16px; 
+    font-family: "VT323";
+    font-size: 20px; 
     z-index: 5; 
 }
 .background {

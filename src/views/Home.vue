@@ -20,9 +20,9 @@
     </button>
       <div v-if="isNavbarVisible" class="navbar">
         <!-- Add your navigation items here -->
-        <router-link to="/">Home</router-link>
-        <router-link to="/location">Enter Location</router-link>
-        <router-link to="/map">Map</router-link>
+        <router-link to="/" class="text">Home</router-link>
+        <router-link to="/location" class="text">Location</router-link>
+        <router-link to="/map" class="text">Map</router-link>
         <!-- More links as needed -->
       </div>
     </div>
@@ -48,6 +48,16 @@ const backgroundImage = computed(() =>
   </script>
   
   <style scoped>
+   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=VT323&display=swap');
+
+*{
+  font-family: "VT323";
+}
+  
+  .text {
+    font-size: 25px;
+
+  }
   .homepage {
     position: relative;
     height: 100vh; /* Adjust as per your design */
@@ -76,7 +86,8 @@ const backgroundImage = computed(() =>
   right: 20px;
   z-index: 5;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  font-family: "VT323";
   font-weight: "bold"; /* This is an 8-bit style font from Google Fonts */
 }
   
