@@ -284,12 +284,12 @@ button, .website-link {
 
 .recommendation {
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.9); /* Changed to dark background */
-    border: 1px solid rgba(255,255,255,0.1); /* Changed border color for dark theme */
+    background-color: rgba(0, 0, 0, 0.9); 
+    border: 1px solid rgba(255,255,255,0.1); 
     border-radius: 15px;
     padding: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Updated shadow for better visibility on dark theme */
-    color: #FFF; /* Changed to white text */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); 
+    color: #FFF; 
 }
 
 .rec-img {

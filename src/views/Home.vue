@@ -19,7 +19,6 @@
       Toggle Light/Dark Mode
     </button>
       <div v-if="isNavbarVisible" class="navbar">
-        <!-- Add your navigation items here -->
         <router-link to="/" class="text">Home</router-link>
         <router-link to="/location" class="text">Location</router-link>
         <router-link to="/map" class="text">Map</router-link>
@@ -60,24 +59,24 @@ const backgroundImage = computed(() =>
   }
   .homepage {
     position: relative;
-    height: 100vh; /* Adjust as per your design */
+    height: 100vh;
     width: 100%;
     overflow: hidden;
   }
   
   .homepage.dark .background {
-  filter: brightness(0.7); /* Adjust brightness for dark mode or change the image source for dark mode */
+  filter: brightness(0.7);
 }
   .background {
     width: 100%;
-    height: 100%; /* You may want to adjust this */
+    height: 100%; 
     z-index: 1;
   }
   .logo {
   position: absolute;
   width: 40%;
-  top: 7%; /* Adjust as needed */
-  left: 45%; /* Adjust as needed */
+  top: 7%;
+  left: 45%;
   z-index: 3;
 }
 .toggle-mode {
@@ -88,7 +87,7 @@ const backgroundImage = computed(() =>
   cursor: pointer;
   font-size: 20px;
   font-family: "VT323";
-  font-weight: "bold"; /* This is an 8-bit style font from Google Fonts */
+  font-weight: "bold"; 
 }
   
   .character {
@@ -131,11 +130,11 @@ const backgroundImage = computed(() =>
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(0,0,0,0.7); /* Adjust as per your design */
+    background: rgba(0,0,0,0.7); 
     color: white;
-    width: 100px; /* Adjust as needed */
+    width: 100px;
     height: 100%;
-    padding: 20px; /* Adjust as needed */
+    padding: 20px; 
     z-index: 4;
     overflow-y: auto;
     font-family: 'Press Start 2P', cursive;

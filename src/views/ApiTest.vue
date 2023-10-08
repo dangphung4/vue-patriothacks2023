@@ -238,8 +238,8 @@ function addGridOverlay() {
 #map-container {
   width: 600px;
   height: 00px;
-  margin: 20px auto 0; /* This gives a 20px margin at the top and centers the div horizontally */
-  position: relative; /* Keeps it relative so it doesn't overlap other elements */
+  margin: 20px auto 0;
+  position: relative; 
 }
 
 /* Style for the map */
@@ -259,10 +259,10 @@ function addGridOverlay() {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(grid.png); /* Set the path to your grid image */
-  background-size: 150px 150px; /* Adjust grid size to match your image */
-  pointer-events: none; /* Ensure it doesn't interfere with map interaction */
-  z-index: 1; /* Set a higher z-index for the grid overlay */
+  background-image: url(grid.png);
+  background-size: 150px 150px; 
+  pointer-events: none; 
+  z-index: 1; 
   opacity: 1; 
 }
 
