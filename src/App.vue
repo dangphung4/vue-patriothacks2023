@@ -2,7 +2,6 @@
 </script>
 
 <template>
-  <div id="app">
 <!-- 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">  <router-link to="/" class="nav-link">My Vue App</router-link></a>
@@ -21,14 +20,22 @@
         </ul>
       </div>
     </nav> -->
-    <router-view />
+    <div id="app">
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
 
 
 <style scoped>
-.display-4 {
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+}.display-4 {
   color: #007bff;
 }
 

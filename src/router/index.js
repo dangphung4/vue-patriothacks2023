@@ -7,18 +7,24 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    props: route => ({ key: route.fullPath }) 
+
   },
   {
     path: '/location',
     name: 'Location',
-    component: Location
+    component: Location,
+    props: route => ({ key: route.fullPath }) 
+
   },
   
   {
     path: '/map',
     name: 'Map',
-    component: Map
+    component: Map,
+    props: route => ({ key: route.fullPath })
+
   },
 ]
 

@@ -56,9 +56,10 @@
 }
 .background {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   z-index: 1;
+  object-fit: cover;
 }
 .moon {
     position: absolute;

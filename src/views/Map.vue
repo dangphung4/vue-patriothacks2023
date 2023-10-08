@@ -1,5 +1,6 @@
 <template>
     <div class="map-page">
+        
       <img src="/darkmap.png" alt="Map" class="map" />
       <div 
         v-for="restaurant in restaurants" 
@@ -10,6 +11,7 @@
       ></div>
       <img :style="{top: spriteY + 'px', left: spriteX + 'px'}" src="/greensprite.gif" alt="Sprite" class="sprite"/>
       
+      <transition name="fade">
       <div v-if="selectedRestaurant && !isMoving" class="info">
     <div class="info-content">
         <h2>{{ selectedRestaurant.name }}</h2>
@@ -17,9 +19,12 @@
         <img :src="selectedRestaurant.image_url" alt="Restaurant Image" class="info-img" />
         <p>Rating: {{ selectedRestaurant.rating }}</p>
         <button @click="closeInfo">Close</button>
+        <a v-if="selectedRestaurant?.official_site_url" :href="selectedRestaurant?.official_site_url" target="_blank" rel="noopener noreferrer" class="website-link">Visit Website</a>
     </div>
 </div>
+</transition>
 
+<transition name="fade">
 <div v-if="recommendations.length && !isMoving" class="recommendations">
     <h3 style="color: white;">Recommendations</h3>
     <div class="rec-container">
@@ -32,9 +37,13 @@
             <img :src="recommendation.image_url" alt="Restaurant Image" class="rec-img" />
             <p>{{ recommendation.address }}</p>
             <p>Rating: {{ recommendation.rating }}</p>
+            <a v-if="recommendation?.official_site_url" :href="recommendation?.official_site_url" target="_blank" rel="noopener noreferrer" class="website-link">Visit Website</a>
+
         </div>
     </div>
 </div>
+</transition>
+
 </div>
 </template>
 
@@ -50,6 +59,10 @@ const isMoving = ref(false);
 
 const location = ref('George Mason');
 const recommendations = ref([]); 
+
+const logUrl = (url) => {
+    console.log('Attempting to open URL:', url);
+};
 
 const calculatePositioning = () => {
     const mapElement = document.querySelector('.map');
@@ -134,6 +147,12 @@ const closeInfo = () => {
 </script>
   
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0;
+}
 /* Reset some styles for a cleaner look */
 body, h2, h3, h4, p {
     margin: 0;
@@ -156,8 +175,8 @@ body, h2, h3, h4, p {
 /* Styles for the pins on the map */
 .pin {
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 60px;
+    height: 60px;
     background: url('/pin.png') no-repeat;
     background-size: 100% 100%;
     cursor: pointer;
@@ -167,11 +186,26 @@ body, h2, h3, h4, p {
 /* Styles for the sprite */
 .sprite {
     position: absolute;
-    width: 48px;
+    width: 64px;
     height: auto;
     transition: top 2s linear, left 2s linear;
 }
+.website-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+}
 
+.website-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 /* Styles for the main popup */
 .info, .recommendation {
     background-color: rgba(0, 0, 0, 0.8);
@@ -180,6 +214,7 @@ body, h2, h3, h4, p {
     color: #fff;
     padding: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    
 }
 
 .info {
@@ -210,8 +245,11 @@ body, h2, h3, h4, p {
 
 .info p {
     margin: 4px 0;
-    font-size: 14px;
+    font-size: 15px;
     color: #fff;
+}
+button, .website-link {
+    transition: all 0.3s ease;
 }
 
 .info-img {
