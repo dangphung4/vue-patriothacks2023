@@ -3,7 +3,7 @@
 
 <template>
   <div id="app">
-
+<!-- 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">  <router-link to="/" class="nav-link">My Vue App</router-link></a>
       <div class="collapse navbar-collapse">
@@ -17,14 +17,10 @@
             <li class="nav-item">
               <router-link to="/test" class="nav-link">API TEST</router-link>
             </li>
-          <!-- <li class="nav-item">
-            <router-link to="/more" class="nav-link">More</router-link>
-          </li> -->
-
-          <!-- Add more navigation items here -->
+         
         </ul>
       </div>
-    </nav>
+    </nav> -->
     <router-view />
   </div>
 </template>
