@@ -1,0 +1,123 @@
+<template>
+    <div class="location-page">
+      <img src="/BTMdark.png" alt="Background" class="background" />
+      <img src="/curse.gif" alt="sprite" class="sprite" style="width: 30%; left: 35%; top:35%;" />
+      <img src="/moon.png" alt="moon" class="moon" />
+      <div class="input-container">
+        <img src="/whitetextbox.png" alt="White Text Box" class="enter-location" />
+        <img src="/playbutton.png" alt="play button" class="play-button" @click="goToMap" />
+        <img src="/locationtext.png" alt="location text" class="box-text" />
+        <input 
+        type="text" 
+        v-model="location" 
+        class="location-input" 
+        placeholder="Enter location"
+        @keyup.enter="goToMap"
+      />
+      </div>
+      <SettingsNavbar />
+    </div>
+  </template>
+  
+  <script setup>
+  import SettingsNavbar from '@/components/SettingsNavbar.vue';
+  import { ref } from 'vue';
+  import { useRouter } from 'vue-router';
+  
+  const location = ref('');
+  const router = useRouter();
+  
+  const goToMap = () => {
+    // you can pass the location to the map page or do something else with it
+    router.push('/map');
+  };
+  </script>
+  
+  <style scoped>
+.location-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.location-input {
+    position: absolute;
+    top: 90%;  
+    left: 10%; 
+    width: 50%; 
+    height: 5%; 
+    border: 1px solid black; 
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 16px; 
+    z-index: 5; 
+}
+.background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+}
+.moon {
+    position: absolute;
+    z-index: 3;
+    width : 10%;
+    left: 10%;
+    top: 15%;
+    transform: translateX(-50%);
+}
+.sprite {
+  position: absolute;
+  width: 100px; /* Adjust as needed */
+  z-index: 2;
+  bottom: 20%; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input-container {
+  position: absolute;
+  z-index: 3;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.enter-location{
+    width : 100%;
+    top : 50%;
+    
+    
+}
+.play-button{
+    position: absolute;
+    width : 8%;
+    left: 6%;
+    top : 30%;
+}
+
+.box-text{
+    position: absolute;
+    left : 15%;
+    width : 80%;
+    top : 32%;
+}
+.location-input {
+  padding: 10px;
+  font-size: 18px; /* Adjust as needed */
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.go-button {
+  padding: 10px 20px;
+  background-color: #000; /* Adjust as needed */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+</style>
+  
